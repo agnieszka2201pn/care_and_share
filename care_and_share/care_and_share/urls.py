@@ -15,7 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from sharing_tool.views import LandingPage, AddDonation, Login, Register
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('index/', LandingPage.as_view(), name='LandingPage' ),
+    path('share/', AddDonation.as_view(), name='AddDonation'),
+    path('login/', Login.as_view(), name='Login'),
+    path('register/', Register.as_view(), name='Register'),
 ]
